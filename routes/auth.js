@@ -72,15 +72,15 @@ const storage = multer.diskStorage({
     
   }).withMessage("your password is not the same of your cofirm password"),
   
-  // body("password", "please be aware of our demands")
-  //   .isLength({
-  //     min: 3,
-  //     max: 12,
-  //   })
-  //   .isIn(['123', 'password', " "])
-  //   .isUppercase(1)
-  //   .isInt(1)
-  //   .withMessage("Your pass should be atleast one symol one letter uppercase one digit and without spaces"),
+  body("password", "please be aware of our demands")
+    .isLength({
+      min: 3,
+      max: 12,
+    })
+    .isIn(['123', 'password', " "])
+    .isUppercase(1)
+    .isInt(1)
+    .withMessage("Your pass should be atleast one symol one letter uppercase one digit and without spaces"),
     ( req, res) => {
       const errors = validationResult(req);
       console.log(errors);
